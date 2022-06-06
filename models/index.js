@@ -57,10 +57,10 @@ as
 
 
 
-Tag.belongsToMany (Products{
+Tag.belongsToMany (Products,{
   through: ProductTag,
   ForeignKey:"tag_id"
-}
+},
  
   Tag.belongsToMany (Product,{
 through:{
@@ -76,8 +76,7 @@ as:"tagValues"
 as: ProductTag,
 
 
-
-});
+  },
 
 
 
@@ -86,7 +85,7 @@ module.exports = {
   Category,
   Tag,
   ProductTag,
-};
+}
 
 
 
