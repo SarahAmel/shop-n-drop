@@ -12,7 +12,7 @@ Product.init(
     // define columns
 
 id:{
-  type:DataTypes.init,
+  type:DataTypes.Integer,
 
   allowNull: false,
 
@@ -42,14 +42,22 @@ productName:{
 
 
 price:{
-  type: DataTypes,
+  type: DataTypes.DECIMAL,
   allowNull:false,
+  validate:{
+    isDecimal: true,
+  }
 
-}
-
-  },
-
-
+},
+stock: {
+  type: DataTypes.Integer,
+  allowNull: false,
+  defaultValue:20,
+  validate:{
+isNumeric:true,
+  }
+},
+  
   
   {
     sequelize,

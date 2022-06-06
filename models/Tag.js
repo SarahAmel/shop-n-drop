@@ -10,7 +10,7 @@ Tag.init(
 
     id:{
     
-      type:DataTypes.init,
+      type:DataTypes.Integer,
       allowNull: false
         autoIncrement:true,
         primaryKey:true,
@@ -19,7 +19,7 @@ Tag.init(
 
       tagName:{
     
-        type:DataTypes.string,
+        type:DataTypes.String,
        
         },
   },
