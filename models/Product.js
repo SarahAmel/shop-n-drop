@@ -12,7 +12,7 @@ Product.init(
     // define columns
 
 id:{
-  type:DataTypes.Integer,
+  type: DataTypes.INTEGER,
 
   allowNull: false,
 
@@ -24,7 +24,7 @@ id:{
 
 categoryId:{
 
-type:DataTypes.init,
+type: DataTypes.INTEGER,
 Reference:{
   model:"category",
   key:"id",
@@ -35,7 +35,7 @@ Reference:{
 
 
 productName:{
-  type:DataTypes.string,
+  type:DataTypes.STRING,
 
   allowNull:false,
 },
@@ -50,7 +50,7 @@ price:{
 
 },
 stock: {
-  type: DataTypes.Integer,
+  type: DataTypes.INTEGER,
   allowNull: false,
   defaultValue:20,
   validate:{
@@ -69,3 +69,38 @@ isNumeric:true,
 );
 
 module.exports = Product;
+
+
+
+
+// Book.init(
+//   {
+//     id: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//       primaryKey: true,
+//       autoIncrement: true,
+//     },
+//     title: {
+//       type: DataTypes.STRING,
+//       allowNull: false,
+//     },
+
+ // Store a reference of the `id` of the `Reader` that owns this Book
+//  reader_id: {
+//   type: DataTypes.INTEGER,
+//   references: {
+//     model: 'reader',
+//     key: 'id',
+//   },
+// },
+
+
+
+// {
+//   sequelize,
+//   timestamps: false,
+//   freezeTableName: true,
+//   underscored: true,
+//   modelName: 'book'
+// }

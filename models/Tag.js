@@ -10,7 +10,7 @@ Tag.init(
 
     id:{
     
-      type:DataTypes.Integer,
+      type:DataTypes.INTEGER,
       allowNull: false
         autoIncrement:true,
         primaryKey:true,
@@ -19,7 +19,7 @@ Tag.init(
 
       tagName:{
     
-        type:DataTypes.String,
+        type:DataTypes.STRING,
        
         },
   },
@@ -35,3 +35,24 @@ Tag.init(
 );
 
 module.exports = Tag;
+
+
+
+
+// password: {
+//   type: DataTypes.STRING,
+//   allowNull: false,
+//   validate: {
+//     len: [1],
+//   },
+// },
+
+
+
+
+// id: {
+//   type: DataTypes.INTEGER,
+//   allowNull: false,
+//   primaryKey: true,
+//   autoIncrement: true,
+// },

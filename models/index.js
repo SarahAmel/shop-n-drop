@@ -7,12 +7,12 @@ const ProductTag = require('./ProductTag');
 // Products belongsTo Category
 
 
-Product.belongsTo(Category{
+Product.belongsTo(Category, {
 
-  ForeignKey:"categoryId  ",
+  ForeignKey:"category_id",
 
 
-  onDelete:"cascade",
+  onDelete:"CASCADE",
 });
 
 
@@ -23,9 +23,9 @@ Product.belongsTo(Category{
 Category.hasMany(Product,{
 
 
-ForeignKey:"categoryId   ",
+ForeignKey:"category_id",
 
-onDelete:"cascade",
+onDelete:"CASCADE",
 
 
 });
@@ -34,7 +34,10 @@ onDelete:"cascade",
 
 // Products belongToMany Tags (through ProductTag)
 
-Products belongsToMany Tags (through ProductTag)
+Products.belongsToMany(Tags,{
+  through: ProductTag, 
+  ForeignKey: "product_id"
+} )
 Product.belongsToMany (Tag,{
 
 through:{
@@ -44,7 +47,7 @@ through:{
 },
 
 
-as "product"
+as 
 
 
 });
@@ -54,7 +57,11 @@ as "product"
 
 
 
-Tag belongsToMany Products(through ProductTag)
+Tag.belongsToMany (Products{
+  through: ProductTag,
+  ForeignKey:"tag_id"
+}
+ 
   Tag.belongsToMany (Product,{
 through:{
  
@@ -80,3 +87,32 @@ module.exports = {
   Tag,
   ProductTag,
 };
+
+
+
+
+// const Reader = require('./Reader');
+// const Book = require('./Book');
+// const LibraryCard = require('./LibraryCard');
+
+// Reader.hasOne(LibraryCard, {
+//   foreignKey: 'reader_id',
+//   onDelete: 'CASCADE',
+// });
+
+// // A reader can have many books
+// Reader.hasMany(Book, {
+//   foreignKey: 'reader_id',
+//   onDelete: 'CASCADE',
+// });
+
+// // A book belongs to a single reader
+// Book.belongsTo(Reader, {
+//   foreignKey: 'reader_id',
+// });
+
+// LibraryCard.belongsTo(Reader, {
+//   foreignKey: 'reader_id',
+// });
+
+// module.exports = { Reader, Book, LibraryCard };
